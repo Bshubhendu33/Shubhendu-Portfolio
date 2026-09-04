@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubhendu Banerjee — Data & AI Portfolio</title>
+<meta name="description" content="Shubhendu Banerjee — MSc Big Data & AI. I build and evaluate AI and data systems: data pipelines, LLM & retrieval features, and automation.">
+<style>
+  :root{
+    --ink:#18181b; --ink2:#27272a; --gray:#71717a; --line:#e4e4e7;
+    --paper:#ffffff; --off:#fafaf9; --accent:#0e7c66; --accent2:#10b981;
+    --tint:#e7f3ef; --dark:#141619; --dark2:#1f2430;
+    --maxw:1080px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font);color:var(--ink2);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+  .brand{font-weight:700;color:var(--ink);letter-spacing:-.3px}
+  .navlinks{display:flex;gap:26px}
+  .navlinks a{color:var(--ink2);font-size:14.5px;font-weight:500}
+  .navlinks a:hover{color:var(--accent);text-decoration:none}
+  @media(max-width:680px){.navlinks{display:none}}
+
+  /* hero */
+  .hero{background:var(--dark);color:#fff;padding:96px 0 88px}
+  .hero .kick{color:var(--accent2);font-size:13px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+  .hero h1{font-size:clamp(34px,6vw,56px);line-height:1.05;font-weight:800;color:#fff;letter-spacing:-1.5px;margin-bottom:20px}
+  .hero p.lead{font-size:clamp(16px,2.2vw,20px);color:#d4d4d8;max-width:680px;margin-bottom:14px}
+  .hero p.sub{font-size:15px;color:#a1a1aa;max-width:680px;margin-bottom:32px}
+  .cta{display:flex;gap:14px;flex-wrap:wrap}
+  .btn{display:inline-block;padding:12px 22px;border-radius:8px;font-weight:600;font-size:14.5px;transition:transform .15s,background .15s}
+  .btn:hover{text-decoration:none;transform:translateY(-2px)}
+  .btn-primary{background:var(--accent2);color:#06281f}
+  .btn-primary:hover{background:#34d399}
+  .btn-ghost{border:1px solid #3f3f46;color:#e4e4e7}
+  .btn-ghost:hover{border-color:var(--accent2);color:#fff}
+
+  /* sections */
+  section.block{padding:78px 0;border-bottom:1px solid var(--line)}
+  .eyebrow{color:var(--accent);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+  h2.sec{font-size:clamp(26px,4vw,34px);font-weight:800;color:var(--ink);letter-spacing:-.8px;margin-bottom:14px}
+  .lede{font-size:17px;color:var(--ink2);max-width:720px;margin-bottom:8px}
+
+  /* about */
+  .about p{font-size:16.5px;color:var(--ink2);max-width:760px;margin-bottom:14px}
+  .about .facts{display:flex;gap:32px;flex-wrap:wrap;margin-top:26px}
+  .fact .n{font-size:28px;font-weight:800;color:var(--accent)}
+  .fact .l{font-size:13px;color:var(--gray)}
+
+  /* skills */
+  .skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin-top:26px}
+  .skillcard{background:var(--off);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .skillcard h3{font-size:14px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{background:#fff;border:1px solid var(--line);border-radius:7px;padding:6px 11px;font-size:13px;color:var(--ink2)}
+  .chip.learn{border-style:dashed;color:var(--gray)}
+
+  /* projects */
+  .project{border:1px solid var(--line);border-radius:14px;padding:30px;margin-top:26px;transition:box-shadow .2s,border-color .2s}
+  .project:hover{box-shadow:0 10px 30px rgba(0,0,0,.06);border-color:#d4d4d8}
+  .project .ptop{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+  .project h3{font-size:21px;font-weight:750;color:var(--ink);letter-spacing:-.3px}
+  .ptag{font-size:12px;font-weight:600;color:var(--accent);background:var(--tint);border-radius:20px;padding:5px 12px;white-space:nowrap}
+  .project p.desc{margin-top:12px;font-size:15.5px;color:var(--ink2)}
+  .role{margin-top:14px;font-size:14.5px;color:var(--ink2);background:var(--off);border-left:3px solid var(--accent);padding:10px 14px;border-radius:0 8px 8px 0}
+  .role b{color:var(--accent)}
+  .metrics{display:flex;gap:26px;flex-wrap:wrap;margin-top:18px}
+  .metric .mv{font-size:22px;font-weight:800;color:var(--accent);letter-spacing:-.5px}
+  .metric .ml{font-size:12px;color:var(--gray)}
+  .stack{margin-top:18px;font-size:13.5px;color:var(--gray)}
+  .stack b{color:var(--ink2);font-weight:600}
+  .plinks{margin-top:16px;display:flex;gap:16px;flex-wrap:wrap}
+  .plinks a{font-size:14px;font-weight:600}
+  .note{margin-top:28px;font-size:14px;color:var(--gray);font-style:italic}
+
+  /* contact / footer */
+  footer{background:var(--dark);color:#e4e4e7;padding:70px 0 46px}
+  footer .eyebrow{color:var(--accent2)}
+  footer h2{color:#fff;font-size:28px;font-weight:800;margin-bottom:18px;letter-spacing:-.6px}
+  .clinks{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+  .clinks .row{display:flex;gap:14px;align-items:baseline}
+  .clinks .lab{color:#a1a1aa;font-size:14px;font-weight:600;min-width:90px}
+  .clinks a{color:var(--accent2);font-size:15px}
+  .foot-note{margin-top:34px;color:#71717a;font-size:13px}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.show{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Shubhendu Banerjee</span>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="kick">Data &nbsp;·&nbsp; AI &nbsp;·&nbsp; Automation &nbsp;·&nbsp; Evaluation</div>
+    <h1>I build and evaluate<br>AI &amp; data systems.</h1>
+    <p class="lead">MSc Big Data &amp; Artificial Intelligence (SRH, Leipzig). I turn real problems into working AI and data systems &mdash; and test whether they actually hold up.</p>
+    <p class="sub">My focus is less &ldquo;does it run&rdquo; and more &ldquo;can you trust the output&rdquo;: knowing when a model works, and when a simpler approach is better. 7+ years in data before my Master&rsquo;s.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#projects">View projects</a>
+      <a class="btn btn-ghost" href="https://github.com/Bshubhendu33" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/shubhendubanerjee33" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section class="block about" id="about">
+  <div class="wrap reveal">
+    <div class="eyebrow">About</div>
+    <h2 class="sec">Practical AI, tested properly</h2>
+    <p>I&rsquo;m a Master&rsquo;s student in Big Data &amp; AI who likes building things that work: taking a real problem, standing up a working prototype with existing models and APIs, checking whether it&rsquo;s reliable, and scaling what holds up. Before my Master&rsquo;s I spent several years in data operations, quality and coordination &mdash; which taught me that the hard part of an AI project is rarely the model. It&rsquo;s understanding the problem, making the result trustworthy, and getting people to actually use it.</p>
+    <p>My signature strength is evaluation: knowing when an AI approach can be trusted, and when a simpler, more robust one is the better call. I&rsquo;m heading toward practical AI/data implementation and, longer term, AI &amp; data project management.</p>
+    <div class="facts">
+      <div class="fact"><div class="n">7+ yrs</div><div class="l">prior data &amp; AI experience</div></div>
+      <div class="fact"><div class="n">1.1</div><div class="l">grade in Machine Learning (MSc)</div></div>
+      <div class="fact"><div class="n">C1</div><div class="l">English (working language)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="block" id="skills">
+  <div class="wrap reveal">
+    <div class="eyebrow">Skills</div>
+    <h2 class="sec">What I work with</h2>
+    <div class="skillgrid">
+      <div class="skillcard">
+        <h3>Languages &amp; Data</h3>
+        <div class="chips">
+          <span class="chip">Python</span><span class="chip">pandas</span><span class="chip">NumPy</span>
+          <span class="chip">scikit-learn</span><span class="chip">SQL / DuckDB</span><span class="chip">statsmodels</span><span class="chip">JavaScript</span>
+        </div>
+      </div>
+      <div class="skillcard">
+        <h3>AI / ML</h3>
+        <div class="chips">
+          <span class="chip">LLMs</span><span class="chip">RAG &amp; Embeddings</span><span class="chip">Vector DBs (Qdrant)</span>
+          <span class="chip">NLP</span><span class="chip">Model evaluation</span><span class="chip">Prompting</span><span class="chip">Unsupervised learning</span>
+        </div>
+      </div>
+      <div class="skillcard">
+        <h3>Cloud &amp; Engineering</h3>
+        <div class="chips">
+          <span class="chip">AWS (Lambda, API Gateway)</span><span class="chip">Terraform</span><span class="chip">Docker</span>
+          <span class="chip">Git</span><span class="chip">Streamlit</span><span class="chip">Neo4j</span><span class="chip">Data pipelines / ETL</span>
+        </div>
+      </div>
+      <div class="skillcard">
+        <h3>Currently learning</h3>
+        <div class="chips">
+          <span class="chip learn">LangGraph / agentic frameworks</span><span class="chip learn">PyTorch</span><span class="chip learn">MCP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="block" id="projects">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="eyebrow">Projects</div>
+      <h2 class="sec">Selected work</h2>
+      <p class="lede">University, research and personal projects. Team projects are credited as such, with my specific contribution noted.</p>
+    </div>
+
+    <!-- AWS -->
+    <div class="project reveal">
+      <div class="ptop">
+        <h3>Serverless AI News Pipeline (AWS)</h3>
+        <span class="ptag">Solo · Cloud / Data Engineering</span>
+      </div>
+      <p class="desc">A fully serverless AI service on AWS, provisioned end-to-end with Terraform &mdash; taking an AI workflow from notebook to a callable, deployed product. A request hits API Gateway, a Lambda fetches live data from an external API, stores it in DynamoDB, and returns clean JSON, with a static dashboard on S3.</p>
+      <div class="role"><b>My role:</b> sole designer &amp; developer &mdash; built and iterated over several phases (API + Lambda, S3 dashboard + CORS, Streamlit app).</div>
+      <p class="desc" style="margin-top:16px">The API key is never in the code &mdash; it&rsquo;s read from AWS Secrets Manager at runtime. Structured JSON outputs, explicit error handling (timeout vs. failure), and idempotent storage (topic + URL keys, so re-fetches overwrite rather than duplicate).</p>
+      <div class="stack"><b>Stack:</b> Python · Terraform · AWS (Lambda, API Gateway, Secrets Manager, DynamoDB, S3)</div>
+      <div class="plinks"><a href="https://github.com/Bshubhendu33/AWS-serverless-news-pipeline" target="_blank" rel="noopener">View on GitHub →</a></div>
+    </div>
+
+    <!-- H&M -->
+    <div class="project reveal">
+      <div class="ptop">
+        <h3>H&amp;M Customer Intelligence Pipeline</h3>
+        <span class="ptag">MSc · Team of 5</span>
+      </div>
+      <p class="desc">A large customer/transaction dataset turned into useful customer intelligence &mdash; an end-to-end pipeline combining graph analytics, machine learning and semantic search. A classifier predicts high-value customers; a semantic search returns the closest products by meaning. Both are powered by the same graph.</p>
+      <div class="role"><b>My role:</b> built the application &amp; integration layer &mdash; the Streamlit dashboard wiring the classifier, the Neo4j graph and the Qdrant vector store into one working tool.</div>
+      <div class="metrics">
+        <div class="metric"><div class="mv">1.37M</div><div class="ml">customers</div></div>
+        <div class="metric"><div class="mv">9.1M</div><div class="ml">transactions</div></div>
+        <div class="metric"><div class="mv">81→87%</div><div class="ml">classifier accuracy</div></div>
+        <div class="metric"><div class="mv">0.87</div><div class="ml">F1 score</div></div>
+      </div>
+      <div class="stack"><b>Stack:</b> Python · DuckDB · Neo4j · scikit-learn · Qdrant · Streamlit · Docker</div>
+    </div>
+
+    <!-- Segmentation -->
+    <div class="project reveal">
+      <div class="ptop">
+        <h3>Customer Segmentation for Marketing</h3>
+        <span class="ptag">MSc · Team of 3</span>
+      </div>
+      <p class="desc">Unsupervised segmentation of 8,500 credit-card customers into four actionable marketing groups &mdash; no predefined labels, so the segments had to be discovered and shown to be interpretable. EDA, preprocessing (median imputation, log-transform of skewed features, scaling), k selection via elbow + silhouette, then KMeans. Each segment paired with a concrete marketing strategy.</p>
+      <div class="role"><b>My role:</b> contributed across preprocessing, clustering and segment analysis as part of the team.</div>
+      <div class="metrics">
+        <div class="metric"><div class="mv">4</div><div class="ml">customer segments</div></div>
+        <div class="metric"><div class="mv">8,500</div><div class="ml">customers</div></div>
+        <div class="metric"><div class="mv">18</div><div class="ml">behavioural features</div></div>
+      </div>
+      <p class="desc" style="margin-top:14px;font-size:14px;color:var(--gray)">Silhouette scores (~0.22) are modest and reported honestly &mdash; normal for overlapping behavioural data.</p>
+      <div class="stack"><b>Stack:</b> Python · scikit-learn (KMeans, StandardScaler) · pandas · matplotlib · seaborn</div>
+    </div>
+
+    <!-- MountainCar -->
+    <div class="project reveal">
+      <div class="ptop">
+        <h3>Reinforcement Learning — MountainCar</h3>
+        <span class="ptag">MSc · Team of 3 · RL</span>
+      </div>
+      <p class="desc">A tabular Q-learning agent that can&rsquo;t reach the goal directly &mdash; it learns to reverse first to build momentum, then swing forward. A classic delayed-reward problem, solved from scratch. The winning strategy is never hard-coded; it emerges purely from the reward signal.</p>
+      <div class="role"><b>My role:</b> contributed across implementation, training and the deployment/risk analysis as part of the team.</div>
+      <div class="metrics">
+        <div class="metric"><div class="mv">~96%</div><div class="ml">success rate</div></div>
+        <div class="metric"><div class="mv">8,000</div><div class="ml">training episodes</div></div>
+        <div class="metric"><div class="mv">40×40</div><div class="ml">state grid</div></div>
+      </div>
+      <p class="desc" style="margin-top:14px">Beyond training, the project treats the agent as a system to run: monitoring, retraining, rollback and a human override / kill switch.</p>
+      <div class="stack"><b>Stack:</b> Python · OpenAI Gymnasium · NumPy · matplotlib</div>
+    </div>
+
+    <!-- Animal Chess -->
+    <div class="project reveal">
+      <div class="ptop">
+        <h3>Animal Kingdom Chess — 3D browser game</h3>
+        <span class="ptag">Hackathon · Team of 3 · built in a day</span>
+      </div>
+      <p class="desc">A playable 3D chess-and-checkers game with real-time multiplayer, procedural sound and full rules &mdash; conceived, built and pitched in a single day at an IEEE hackathon.</p>
+      <div class="role"><b>My role:</b> the concept, game design and the judges&rsquo; pitch. To be transparent about how it was built: the code was AI-generated from our prompts &mdash; a demonstration of rapid prototyping with AI. The idea, design and presentation were ours.</div>
+      <div class="stack"><b>Stack:</b> JavaScript · Three.js / WebGL · Web Audio API · AI coding assistants</div>
+    </div>
+
+    <p class="note">Additional work &mdash; including a research project (LLM evaluation, IEEE paper under review) &mdash; available on request.</p>
+  </div>
+</section>
+
+<!-- CONTACT / FOOTER -->
+<footer id="contact">
+  <div class="wrap reveal">
+    <div class="eyebrow">Get in touch</div>
+    <h2>Let&rsquo;s talk.</h2>
+    <div class="clinks">
+      <div class="row"><span class="lab">GitHub</span><a href="https://github.com/Bshubhendu33" target="_blank" rel="noopener">github.com/Bshubhendu33</a></div>
+      <div class="row"><span class="lab">LinkedIn</span><a href="https://www.linkedin.com/in/shubhendubanerjee33" target="_blank" rel="noopener">linkedin.com/in/shubhendubanerjee33</a></div>
+      <div class="row"><span class="lab">Email</span><a href="mailto:bshubhendu33@gmail.com">bshubhendu33@gmail.com</a></div>
+    </div>
+    <p class="foot-note">MSc Big Data &amp; AI, SRH Leipzig · based in Germany · open to data &amp; AI roles (full-time and working-student).</p>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target);} });
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
