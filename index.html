@@ -127,6 +127,15 @@
   .foot-note{margin-top:34px;color:var(--muted);font-size:13.5px}
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
   .reveal.show{opacity:1;transform:none}
+  .avail{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+  .availcard{flex:1;min-width:200px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px;display:flex;align-items:flex-start;gap:12px}
+  .availcard .ico{font-size:18px;line-height:1.3}
+  .availcard .t{font-weight:600;font-size:14.5px;color:var(--text)}
+  .availcard .s{font-size:13px;color:var(--muted);margin-top:2px}
+  .langrow{display:flex;align-items:center;gap:14px;margin-top:14px;flex-wrap:wrap}
+  .langpill{display:inline-flex;align-items:center;gap:9px;background:var(--chip-bg);border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:13.5px}
+  .langpill b{color:var(--text);font-weight:600}
+  .langpill .lvl{font-family:var(--mono);font-size:11.5px;color:var(--accent);background:var(--surface2);border:1px solid var(--line);border-radius:6px;padding:2px 7px}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.blob{animation:none}}
 </style>
 </head>
@@ -143,12 +152,13 @@
   <div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
   <div class="grid-overlay"></div>
   <div class="wrap">
-    <div class="status"><span class="pulse"></span> Open to Data &amp; AI roles &mdash; full-time &amp; working-student</div>
+    <div class="status"><span class="pulse"></span> Available now &mdash; Werkstudent &amp; internship roles in Data &amp; AI</div>
     <h1 class="title">I build <span class="grad">&amp; evaluate</span><br>AI &amp; data systems.</h1>
     <div class="rotor"><span class="word" id="rotor"></span><span class="cursor"></span></div>
-    <p class="lead">MSc Big Data &amp; AI (SRH, Leipzig). I turn real problems into working systems &mdash; and test whether they actually hold up. My focus is less &ldquo;does it run&rdquo; and more &ldquo;can you trust the output.&rdquo; 7+ years in data before my Master&rsquo;s.</p>
+    <p class="lead">MSc Big Data &amp; AI (SRH, Leipzig), based in Halle (Saale). I turn real problems into working systems &mdash; and test whether they actually hold up. My focus is less &ldquo;does it run&rdquo; and more &ldquo;can you trust the output.&rdquo; 7+ years in data before my Master&rsquo;s.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="#projects">View projects &rarr;</a>
+      <a class="btn btn-primary" href="Shubhendu_Banerjee_CV.pdf" target="_blank" rel="noopener">Download CV &darr;</a>
+      <a class="btn btn-ghost" href="#projects">View projects &rarr;</a>
       <a class="btn btn-ghost" href="https://github.com/Bshubhendu33" target="_blank" rel="noopener">GitHub</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/shubhendubanerjee33" target="_blank" rel="noopener">LinkedIn</a>
     </div>
@@ -161,9 +171,18 @@
   <p>My signature strength is <b>evaluation</b>: knowing when an AI approach can be trusted, and when a simpler, more robust one is the better call. I&rsquo;m heading toward practical AI/data implementation and, longer term, AI &amp; data project management.</p>
   <div class="facts">
     <div class="factcard"><div class="n" data-count>7+</div><div class="l">years in data &amp; AI</div></div>
-    <div class="factcard"><div class="n" data-count>1.1</div><div class="l">grade in Machine Learning</div></div>
+    <div class="factcard"><div class="n" data-count>1.1</div><div class="l">top grade (ML &amp; OSINT research)</div></div>
     <div class="factcard"><div class="n" data-count>6</div><div class="l">projects shipped</div></div>
     <div class="factcard"><div class="n">C1</div><div class="l">English (working language)</div></div>
+  </div>
+  <div class="avail">
+    <div class="availcard"><span class="ico">&#9989;</span><div><div class="t">Eligible to work in Germany</div><div class="s">German student visa &mdash; available for Werkstudent &amp; internship (part-time during term).</div></div></div>
+    <div class="availcard"><span class="ico">&#128205;</span><div><div class="t">Halle (Saale) / Leipzig</div><div class="s">On-site in the region, or remote / hybrid across Germany.</div></div></div>
+  </div>
+  <div class="langrow">
+    <span class="langpill"><b>English</b><span class="lvl">C1</span></span>
+    <span class="langpill"><b>German</b><span class="lvl">A1 &middot; learning</span></span>
+    <span class="langpill"><b>Hindi / Bengali</b><span class="lvl">Native</span></span>
   </div>
 </div></section>
 <section class="block" id="skills"><div class="wrap reveal">
@@ -179,14 +198,6 @@
 <section class="block" id="projects"><div class="wrap">
   <div class="reveal"><div class="eyebrow">03 &mdash; Work</div><h2 class="sec">Selected projects</h2><p class="lede">University, research and personal work. Team projects are credited as such, with my specific contribution noted.</p></div>
   <div class="project reveal">
-    <div class="ptop"><h3>Serverless AI News Pipeline</h3><span class="ptag">solo &middot; cloud engineering</span></div>
-    <p class="desc">A fully serverless AI service on AWS, provisioned end-to-end with Terraform &mdash; taking an AI workflow from notebook to a callable, deployed product. A request hits API Gateway, a Lambda fetches live data from an external API, stores it in DynamoDB, and returns clean JSON, with a static dashboard on S3.</p>
-    <div class="role"><b>My role:</b> sole designer &amp; developer &mdash; built and iterated over several phases (API + Lambda, S3 dashboard + CORS, Streamlit app).</div>
-    <p class="desc" style="margin-top:16px">The API key is never in the code &mdash; it&rsquo;s read from Secrets Manager at runtime. Structured JSON outputs, explicit error handling, and idempotent storage so re-fetches overwrite rather than duplicate.</p>
-    <div class="stack"><b>stack:</b> Python &middot; Terraform &middot; AWS (Lambda, API Gateway, Secrets Manager, DynamoDB, S3)</div>
-    <div class="plinks"><a href="https://github.com/Bshubhendu33/AWS-serverless-news-pipeline" target="_blank" rel="noopener">View on GitHub &rarr;</a></div>
-  </div>
-    <div class="project reveal">
     <div class="ptop"><h3>GDELT&ndash;KBA Registration Forecasting</h3><span class="ptag">msc &middot; team of 4 &middot; osint research</span></div>
     <p class="desc">An OSINT study testing whether German fuel- and energy-cost news discourse predicts vehicle registration trends. An end-to-end NLP pipeline over ~291,000 GDELT news records &mdash; embeddings, weighted community detection, and grammar-constrained LLM labelling &mdash; validated against official KBA registration data with Granger causality and stationarity testing.</p>
     <div class="role"><b>My role:</b> contributed across the pipeline, statistical validation and the IEEE paper as part of the team.</div>
@@ -196,9 +207,17 @@
       <div class="metric"><div class="mv" data-count>52</div><div class="ml">months of KBA data</div></div>
       <div class="metric"><div class="mv">1.1</div><div class="ml">final grade</div></div>
     </div>
-    <p class="desc" style="margin-top:14px;font-size:14px">An early signal looked strong but collapsed under stationarity correction &mdash; reported honestly as a documented null, which is a valid result under a pre-registered falsifiable threshold.</p>
+    <p class="desc" style="margin-top:14px;font-size:14px">An early signal looked strong but collapsed under stationarity correction &mdash; reported honestly as a documented null, a valid result under a pre-registered falsifiable threshold.</p>
     <div class="stack"><b>stack:</b> Python &middot; GDELT &middot; BigQuery &middot; sentence-transformers &middot; statsmodels &middot; Mistral Nemo</div>
     <div class="plinks"><a href="https://github.com/Bshubhendu33/osint-gdelt-kba-forecasting" target="_blank" rel="noopener">View on GitHub &rarr;</a></div>
+  </div>
+  <div class="project reveal">
+    <div class="ptop"><h3>Serverless AI News Pipeline</h3><span class="ptag">solo &middot; cloud engineering</span></div>
+    <p class="desc">A fully serverless AI service on AWS, provisioned end-to-end with Terraform &mdash; taking an AI workflow from notebook to a callable, deployed product. A request hits API Gateway, a Lambda fetches live data from an external API, stores it in DynamoDB, and returns clean JSON, with a static dashboard on S3.</p>
+    <div class="role"><b>My role:</b> sole designer &amp; developer &mdash; built and iterated over several phases (API + Lambda, S3 dashboard + CORS, Streamlit app).</div>
+    <p class="desc" style="margin-top:16px">The API key is never in the code &mdash; it&rsquo;s read from Secrets Manager at runtime. Structured JSON outputs, explicit error handling, and idempotent storage so re-fetches overwrite rather than duplicate.</p>
+    <div class="stack"><b>stack:</b> Python &middot; Terraform &middot; AWS (Lambda, API Gateway, Secrets Manager, DynamoDB, S3)</div>
+    <div class="plinks"><a href="https://github.com/Bshubhendu33/AWS-serverless-news-pipeline" target="_blank" rel="noopener">View on GitHub &rarr;</a></div>
   </div>
   <div class="project reveal">
     <div class="ptop"><h3>H&amp;M Customer Intelligence Pipeline</h3><span class="ptag">msc &middot; team of 5</span></div>
@@ -242,7 +261,7 @@
     <div class="role"><b>My role:</b> the concept, game design and the judges&rsquo; pitch. To be transparent about how it was built: the code was AI-generated from our prompts &mdash; a demonstration of rapid prototyping with AI. The idea, design and presentation were ours.</div>
     <div class="stack"><b>stack:</b> JavaScript &middot; Three.js / WebGL &middot; Web Audio API &middot; AI coding assistants</div>
   </div>
-  <p class="note">More work &mdash; including a research project on LLM evaluation &mdash; available on request.</p>
+  <p class="note">More work &mdash; including a research project on LLM evaluation (IEEE paper under review) &mdash; available on request.</p>
 </div></section>
 <footer id="contact">
   <div class="fglow"></div>
@@ -254,7 +273,7 @@
       <div class="row"><span class="lab">LinkedIn</span><a href="https://www.linkedin.com/in/shubhendubanerjee33" target="_blank" rel="noopener">linkedin.com/in/shubhendubanerjee33</a></div>
       <div class="row"><span class="lab">Email</span><a href="mailto:bshubhendu33@gmail.com">bshubhendu33@gmail.com</a></div>
     </div>
-    <p class="foot-note">MSc Big Data &amp; AI, SRH Leipzig &middot; based in Germany &middot; open to data &amp; AI roles (full-time &amp; working-student).</p>
+    <p class="foot-note">MSc Big Data &amp; AI, SRH Leipzig &middot; Halle (Saale), Germany &middot; eligible to work on a German student visa &middot; available for Werkstudent &amp; internship roles in Data &amp; AI.</p>
   </div>
 </footer>
 <script>
